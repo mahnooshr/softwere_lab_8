@@ -1,9 +1,7 @@
 package org.example;
 
 import edu.uci.ics.jung.graph.SparseMultigraph;
-import org.example.graphTravelers.BfsGraphTraverser;
-import org.example.graphTravelers.DfsGraphTraverser;
-import org.example.graphTravelers.Traverser;
+import org.example.graphTravelers.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +27,10 @@ public class Main {
         graph.addEdge("E4", 3, 5); // Edge between Vertex 3 and Vertex 5
         graph.addEdge("E5", 4, 5); // Edge between Vertex 4 and Vertex 5
 
-        Traverser dfsGraphTraveler= new DfsGraphTraverser(graph);
-        Traverser bfsGraphTraveler= new BfsGraphTraverser(graph);
+        GraphAdapter adapter = new JungGraphAdapter(graph);
+
+        Traverser dfsGraphTraveler= new DfsGraphTraverser(adapter);
+        Traverser bfsGraphTraveler= new BfsGraphTraverser(adapter);
 
         List<Integer> dfsPath = dfsGraphTraveler.traverse(1);
         List<Integer> bfsTraveler = bfsGraphTraveler.traverse(1);

@@ -5,9 +5,10 @@ import edu.uci.ics.jung.graph.SparseMultigraph;
 import java.util.*;
 
 public class DfsGraphTraverser implements Traverser {
-    private final SparseMultigraph<Integer, String> graph;
+    private final GraphAdapter graph; //removing the dependency to the jung library
+//    private final SparseMultigraph<Integer, String> graph;
 
-    public DfsGraphTraverser(SparseMultigraph<Integer, String> graph) {
+    public DfsGraphTraverser(GraphAdapter graph) {
         this.graph = graph;
     }
 
