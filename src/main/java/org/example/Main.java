@@ -23,11 +23,19 @@ public class Main {
         graph.addVertex(5);
 
         // Add edges (using String identifiers)
-        graph.addEdge("E1", 1, 2); // Edge between Vertex 1 and Vertex 2
-        graph.addEdge("E2", 1, 3); // Edge between Vertex 1 and Vertex 3
-        graph.addEdge("E3", 2, 4); // Edge between Vertex 2 and Vertex 4
-        graph.addEdge("E4", 3, 5); // Edge between Vertex 3 and Vertex 5
-        graph.addEdge("E5", 4, 5); // Edge between Vertex 4 and Vertex 5
+//        graph.addEdge("E1", 1, 2); // Edge between Vertex 1 and Vertex 2
+//        graph.addEdge("E2", 1, 3); // Edge between Vertex 1 and Vertex 3
+//        graph.addEdge("E3", 2, 4); // Edge between Vertex 2 and Vertex 4
+//        graph.addEdge("E4", 3, 5); // Edge between Vertex 3 and Vertex 5
+//        graph.addEdge("E5", 4, 5); // Edge between Vertex 4 and Vertex 5
+
+        graph.addEdge(1, 2);
+        graph.addEdge(1, 3);
+        graph.addEdge(2, 4);
+        graph.addEdge(3, 5);
+        graph.addEdge(4, 5);
+
+
 
 //        GraphAdapter adapter = new JungGraphAdapter(graph);
         GraphAdapter adapter = new JGraphTGraphAdapter(graph);
