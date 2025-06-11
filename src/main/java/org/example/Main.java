@@ -11,7 +11,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         // Create a graph
-        SparseMultigraph<Integer,String> graph = new SparseMultigraph<>();
+//        SparseMultigraph<Integer,String> graph = new SparseMultigraph<>();
+
+        Graph<Integer, DefaultEdge> graph = new SimpleGraph<>(DefaultEdge.class);
 
         // Add vertices (using Integer nodes)
         graph.addVertex(1);
@@ -27,7 +29,8 @@ public class Main {
         graph.addEdge("E4", 3, 5); // Edge between Vertex 3 and Vertex 5
         graph.addEdge("E5", 4, 5); // Edge between Vertex 4 and Vertex 5
 
-        GraphAdapter adapter = new JungGraphAdapter(graph);
+//        GraphAdapter adapter = new JungGraphAdapter(graph);
+        GraphAdapter adapter = new JGraphTGraphAdapter(graph);
 
         Traverser dfsGraphTraveler= new DfsGraphTraverser(adapter);
         Traverser bfsGraphTraveler= new BfsGraphTraverser(adapter);
